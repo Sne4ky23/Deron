@@ -130,7 +130,7 @@ export const Header: React.FC = () => {
                   e.preventDefault();
                   navigateToSection(link.href);
                 }}
-                className="text-xs uppercase tracking-[0.2em] font-medium text-[#111111]/70 hover:text-[#111111] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#111111] hover:after:w-full after:transition-all after:duration-300"
+                className="text-xs uppercase tracking-[0.2em] font-medium text-[#111111]/70 hover:text-[#111111] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#111111] after:transition-all after:duration-300 hover:after:w-full"
               >
                 {link.label}
               </a>
@@ -152,27 +152,31 @@ export const Header: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Hamburger Button (Strict 44x44px minimum tap target) */}
+          {/* Mobile Hamburger Button with Animation */}
           <button
             ref={toggleBtnRef}
             id="mobile-menu-toggle"
             type="button"
             onClick={() => (isMenuOpen ? closeMenu(false) : openMenu())}
-            className="md:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] border border-[#111111]/20 hover:border-[#111111] text-[#111111] transition-colors cursor-pointer touch-manipulation"
+            className={`md:hidden flex items-center justify-center w-11 h-11 min-w-[44px] min-h-[44px] border text-[#111111] transition-all duration-300 cursor-pointer ${
+              isMenuOpen
+                ? 'border-[#111111] bg-[#111111]/5'
+                : 'border-[#111111]/20 hover:border-[#111111]'
+            }`}
             aria-label={isMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-menu-fullscreen"
           >
             {isMenuOpen ? (
-              <span className="text-2xl font-light leading-none select-none" aria-hidden="true">&times;</span>
+              <span className="text-2xl font-light leading-none select-none transition-transform duration-300 rotate-90" aria-hidden="true">&times;</span>
             ) : (
-              <span className="text-2xl leading-none select-none" aria-hidden="true">&#9776;</span>
+              <span className="text-2xl leading-none select-none transition-transform duration-300" aria-hidden="true">&#9776;</span>
             )}
           </button>
         </div>
       </header>
 
-      {/* Mobile Fullscreen Menu rendered in Portal to avoid header backdrop-blur clipping */}
+      {/* Mobile Fullscreen Menu with Staggered Animation */}
       {isMenuOpen && typeof document !== 'undefined' && createPortal(
         <div
           ref={menuRef}
@@ -180,10 +184,10 @@ export const Header: React.FC = () => {
           role="dialog"
           aria-modal="true"
           aria-label="Menú de navegación móvil"
-          className="fixed inset-0 z-[99999] bg-white flex flex-col justify-between p-6 overflow-y-auto overscroll-contain animate-in fade-in duration-200"
+          className="fixed inset-0 z-[99999] bg-white flex flex-col justify-between p-6 overflow-y-auto overscroll-contain animate-menu-slide-in"
         >
           {/* Top Bar with DERON logo and Close Button */}
-          <div className="flex items-center justify-between pb-5 border-b border-[#111111]/10">
+          <div className="flex items-center justify-between pb-5 border-b border-[#111111]/10 animate-menu-item" style={{ animationDelay: '0.05s' }}>
             <button
               type="button"
               onClick={() => navigateToSection('#hero')}
@@ -199,29 +203,30 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => closeMenu(true)}
-              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center border border-[#111111]/20 text-2xl font-light text-[#111111] hover:bg-[#111111]/5 transition-colors cursor-pointer touch-manipulation"
+              className="w-11 h-11 min-w-[44px] min-h-[44px] flex items-center justify-center border border-[#111111]/20 text-2xl font-light text-[#111111] hover:bg-[#111111]/5 transition-colors"
               aria-label="Cerrar menú"
             >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
 
-          {/* Centered Navigation Links */}
+          {/* Centered Navigation Links with Staggered Animation */}
           <nav className="my-auto flex flex-col items-center justify-center gap-4 py-8" aria-label="Enlaces de navegación móvil">
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <button
                 key={link.href}
                 type="button"
                 onClick={() => navigateToSection(link.href)}
-                className="font-monument text-xl sm:text-2xl tracking-[0.15em] font-bold uppercase text-[#111111] hover:text-[#111111]/60 active:scale-95 transition-all py-3.5 px-6 text-center min-h-[50px] flex items-center justify-center touch-manipulation cursor-pointer w-full"
+                className="font-monument text-xl sm:text-2xl tracking-[0.15em] font-bold uppercase text-[#111111] hover:text-[#111111]/60 active:scale-95 transition-all py-3.5 px-6 text-center animate-menu-item"
+                style={{ animationDelay: `${0.1 + index * 0.08}s` }}
               >
                 {link.label}
               </button>
             ))}
           </nav>
 
-          {/* Bottom Actions */}
-          <div className="border-t border-[#111111]/10 pt-5 flex flex-col items-center gap-3 text-center">
+          {/* Bottom Actions with Animation */}
+          <div className="border-t border-[#111111]/10 pt-5 flex flex-col items-center gap-3 text-center animate-menu-item" style={{ animationDelay: '0.5s' }}>
             <a
               href="mailto:deronsupply@gmail.com"
               className="text-xs uppercase tracking-[0.2em] text-[#111111]/70 font-mono py-2 min-h-[44px] flex items-center justify-center"
@@ -231,7 +236,7 @@ export const Header: React.FC = () => {
             <button
               type="button"
               onClick={() => navigateToSection('#contacto')}
-              className="w-full min-h-[48px] py-4 bg-[#111111] text-white font-monument text-xs uppercase tracking-[0.2em] font-bold text-center flex items-center justify-center touch-manipulation cursor-pointer hover:bg-black active:bg-black/90 transition-colors"
+              className="w-full min-h-[48px] py-4 bg-[#111111] text-white font-monument text-xs uppercase tracking-[0.2em] font-bold text-center flex items-center justify-center touch-manipulation transition-all hover:scale-105 active:scale-95"
             >
               Contacto directo &rarr;
             </button>
