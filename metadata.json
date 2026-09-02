@@ -1,0 +1,6 @@
+{
+  "name": "DERON — Stands NFC para Negocios",
+  "description": "DERON. Stands físicos con tecnología NFC y QR para Google Maps. El punto de contacto entre tu negocio y tus clientes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

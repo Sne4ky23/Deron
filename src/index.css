@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-title: 'Monument Extended', 'Syne', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-hero: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --header-height: 72px;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  /* Compensar header fijo en anclas */
+  section {
+    scroll-margin-top: var(--header-height);
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #FFFFFF;
+    color: #111111;
+  }
+
+  /* Focus visible accessibility */
+  :focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 2px;
+  }
+}
+
+.font-hero {
+  font-family: var(--font-hero);
+  font-weight: 700;
+  letter-spacing: clamp(0.08em, 1.5vw, 0.22em);
+}
+
+.font-monument {
+  font-family: var(--font-title);
+  letter-spacing: -0.02em;
+}
+
+.font-monument-wide {
+  font-family: var(--font-title);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.font-space {
+  font-family: var(--font-body);
+}
+
+/* Modal backdrop optimizado para móvil (sin blur costoso en <601px) */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.78);
+}
+@media (min-width: 601px) {
+  .modal-backdrop {
+    backdrop-filter: blur(6px);
+  }
+}
+
+/* Watermarks decorativos pesados ocultos en móvil para evitar repaints y GPU lag */
+.watermark {
+  display: none !important;
+}
+@media (min-width: 900px) {
+  .watermark {
+    display: block !important;
+  }
+}
+
+/* Tap targets mínimos para móvil (44x44px) */
+.rating-row button,
+.chip,
+.hambutton {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+  touch-action: manipulation;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F4F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #111111;
+}
+
+/* Floating section-nav visibility rules */
+@media (max-width: 900px) {
+  .section-nav {
+    display: none !important;
+  }
+}
+@media (min-width: 901px) {
+  .section-nav {
+    display: flex !important;
+  }
+}
+
