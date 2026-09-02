@@ -69,12 +69,12 @@ export const Concept: React.FC = () => {
         <button
           type="button"
           onClick={() => {
-            document.getElementById('producto')?.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('beneficios')?.scrollIntoView({ behavior: 'smooth' });
           }}
           className="text-white/40 hover:text-white transition-colors min-h-[44px] min-w-[44px] flex flex-col items-center justify-center gap-1 focus:outline-none cursor-pointer group touch-manipulation"
-          aria-label="Desplazar al stand"
+          aria-label="Desplazar a beneficios"
         >
-          <span className="text-[10px] uppercase font-monument tracking-[0.25em]">Ver el stand</span>
+          <span className="text-[10px] uppercase font-monument tracking-[0.25em]">Ver beneficios</span>
           <svg
             viewBox="0 0 24 24"
             width="16"

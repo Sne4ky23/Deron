@@ -6,6 +6,7 @@ export const SectionNav: React.FC = () => {
   const sections = [
     { id: 'hero', label: 'Inicio' },
     { id: 'concepto', label: 'Concepto' },
+    { id: 'beneficios', label: 'Beneficios' },
     { id: 'producto', label: 'El Stand' },
     { id: 'proceso', label: 'Proceso' },
     { id: 'aplicaciones', label: 'En uso' },

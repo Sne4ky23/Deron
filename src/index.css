@@ -2,9 +2,9 @@
 
 @layer base {
   :root {
-    --font-title: 'Monument Extended', 'Syne', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-title: 'Syne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-hero: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-hero: 'Syne', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --header-height: 72px;
   }
 
@@ -32,18 +32,21 @@
 
 .font-hero {
   font-family: var(--font-hero);
-  font-weight: 700;
-  letter-spacing: clamp(0.08em, 1.5vw, 0.22em);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .font-monument {
   font-family: var(--font-title);
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .font-monument-wide {
   font-family: var(--font-title);
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
