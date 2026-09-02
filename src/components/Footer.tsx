@@ -64,19 +64,19 @@ export const Footer: React.FC = () => {
           {/* Legal Links */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center text-xs uppercase tracking-[0.15em] font-medium text-white/50">
             <a
-              href="/legal/aviso-legal"
+              href="/legal/aviso-legal.html"
               className="hover:text-white transition-colors min-h-[44px] inline-flex items-center"
             >
               Aviso Legal
             </a>
             <a
-              href="/legal/privacidad"
+              href="/legal/privacidad.html"
               className="hover:text-white transition-colors min-h-[44px] inline-flex items-center"
             >
               Privacidad
             </a>
             <a
-              href="/legal/cookies"
+              href="/legal/cookies.html"
               className="hover:text-white transition-colors min-h-[44px] inline-flex items-center"
             >
               Cookies

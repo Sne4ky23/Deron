@@ -9,6 +9,7 @@ export const SectionNav: React.FC = () => {
     { id: 'producto', label: 'El Stand' },
     { id: 'proceso', label: 'Proceso' },
     { id: 'aplicaciones', label: 'En uso' },
+    { id: 'faq', label: 'FAQ' },
     { id: 'contacto', label: 'Contacto' },
   ];
 

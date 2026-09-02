@@ -3,40 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidad - DERON Supply</title>
+    <title>Política de Privacidad — DERON Supply</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23111111'/%3E%3Cpath d='M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z' fill='%23FFFFFF' fill-rule='evenodd' transform='translate(10,10) scale(0.8)'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
             background-color: #FFFFFF;
             color: #111111;
-            line-height: 1.6;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
         }
-        
+
         header {
-            background-color: #FFFFFF;
-            border-bottom: 1px solid #111111/10;
-            padding: 1.5rem 1rem;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+            padding: 1.25rem 1.5rem;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 50;
         }
-        
+
         .header-content {
-            max-width: 80rem;
+            max-width: 72rem;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
@@ -45,195 +51,288 @@
             color: #111111;
             min-height: 2.75rem;
         }
-        
+
+        .logo-symbol {
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover .logo-symbol {
+            transform: scale(1.05);
+        }
+
         .logo-text {
-            font-family: 'Monument Extended', 'Syne', sans-serif;
-            font-size: 1.125rem;
-            font-weight: bold;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
             letter-spacing: 0.18em;
             text-transform: uppercase;
         }
-        
+
         .back-btn {
-            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-            padding: 0.75rem 1.25rem;
+            font-family: 'Syne', 'Space Grotesk', sans-serif;
+            padding: 0.65rem 1.25rem;
             border: 1px solid #111111;
             background-color: transparent;
             color: #111111;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.2em;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
             text-transform: uppercase;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             text-decoration: none;
-            display: inline-block;
-            min-height: 2.75rem;
-            display: flex;
+            display: inline-flex;
             align-items: center;
+            gap: 0.5rem;
+            min-height: 2.5rem;
         }
-        
+
         .back-btn:hover {
             background-color: #111111;
             color: #FFFFFF;
         }
-        
+
         main {
-            max-width: 80rem;
+            max-width: 54rem;
             margin: 0 auto;
-            padding: 8rem 1rem 5rem;
+            padding: 7.5rem 1.5rem 5rem;
             flex: 1;
         }
-        
+
         h1 {
-            font-family: 'Monument Extended', 'Syne', sans-serif;
-            font-size: clamp(2rem, 5vw, 3.75rem);
-            font-weight: bold;
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 800;
             letter-spacing: -0.02em;
             text-transform: uppercase;
             margin-bottom: 1.5rem;
             padding-bottom: 1.5rem;
-            border-bottom: 1px solid #111111/10;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+            line-height: 1.15;
         }
-        
+
         h2 {
-            font-family: 'Monument Extended', 'Syne', sans-serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: -0.02em;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.01em;
             text-transform: uppercase;
-            margin: 2rem 0 1rem 0;
-            margin-top: 2.5rem;
-        }
-        
-        h2:first-of-type {
-            margin-top: 0;
-        }
-        
-        p {
-            margin-bottom: 1rem;
-            color: #111111/80;
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-        
-        ul, ol {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-            color: #111111/80;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-            line-height: 1.8;
-        }
-        
-        strong {
+            margin: 2.5rem 0 1rem 0;
             color: #111111;
         }
-        
+
+        .legal-section:first-of-type h2 {
+            margin-top: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: rgba(17, 17, 17, 0.78);
+            font-size: 0.98rem;
+            line-height: 1.75;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+            color: rgba(17, 17, 17, 0.78);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+
+        strong {
+            color: #111111;
+            font-weight: 600;
+        }
+
+        a {
+            color: #111111;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        a:hover {
+            color: rgba(17, 17, 17, 0.6);
+        }
+
+        .legal-section {
+            margin: 2rem 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.06);
+        }
+
+        .legal-section:last-of-type {
+            border-bottom: none;
+        }
+
         footer {
             background-color: #111111;
             color: #FFFFFF;
-            border-top: 1px solid #FFFFFF/10;
-            padding: 4rem 1rem;
-            margin-top: 5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 1.5rem;
+            margin-top: 4rem;
         }
-        
+
         .footer-content {
-            max-width: 80rem;
+            max-width: 72rem;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 2rem;
+            gap: 2.5rem;
         }
-        
+
         .footer-top {
             display: flex;
             flex-direction: column;
-            gap: 2rem;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: baseline;
-            gap: 0.75rem;
-        }
-        
-        .footer-logo-text {
-            font-family: 'Monument Extended', 'Syne', sans-serif;
-            font-size: 1.125rem;
-            font-weight: bold;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-        }
-        
-        .footer-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: #FFFFFF/50;
-        }
-        
-        .footer-bottom {
-            border-top: 1px solid #FFFFFF/10;
-            padding-top: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            gap: 1.5rem;
             align-items: center;
             text-align: center;
         }
-        
-        .footer-copy {
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: #FFFFFF/40;
-            font-family: 'Courier New', monospace;
+
+        @media (min-width: 768px) {
+            .footer-top {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
         }
-        
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        
-        .footer-links a {
-            color: #FFFFFF/50;
-            text-decoration: none;
-            transition: color 0.3s;
-            min-height: 2.75rem;
+
+        .footer-brand {
             display: flex;
             align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        
-        .footer-links a:hover {
+
+        .footer-symbol {
+            width: 28px;
+            height: 28px;
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+        }
+
+        .footer-logo-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
             color: #FFFFFF;
         }
-        
-        .legal-section {
-            margin: 2rem 0;
+
+        .footer-subtitle {
+            font-size: 0.72rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Space Grotesk', sans-serif;
+            border-left: 1px solid rgba(255, 255, 255, 0.2);
+            padding-left: 0.75rem;
+        }
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+
+        .footer-socials a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-socials span {
+            color: rgba(255, 255, 255, 0.4);
+            margin-left: 0.25rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .footer-copy {
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.4);
+            font-family: monospace;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.72rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.5);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
         }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
-            <a href="/" class="logo">
+            <a href="/" class="logo" aria-label="DERON inicio">
+                <div class="logo-symbol">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="30" height="30" role="img" aria-label="Símbolo DERON">
+                        <path d="M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z" fill="#111111" fill-rule="evenodd" />
+                    </svg>
+                </div>
                 <span class="logo-text">DERON</span>
             </a>
-            <a href="/" class="back-btn">← Volver atrás</a>
+            <a href="/" class="back-btn">&larr; Volver al inicio</a>
         </div>
     </header>
-    
+
     <main>
         <h1>Política de Privacidad</h1>
-        
+
         <div class="legal-section">
             <h2>1. Responsable del Tratamiento de Datos</h2>
             <p>
@@ -247,116 +346,122 @@
                 <li><strong>Correo de Contacto:</strong> deronsupply@gmail.com</li>
             </ul>
         </div>
-        
+
         <div class="legal-section">
             <h2>2. Datos Personales que Recabamos</h2>
             <p>
                 DERON SUPPLY recaba los siguientes datos personales cuando el usuario se comunica con nosotros:
             </p>
             <ul>
-                <li><strong>Nombre</strong></li>
+                <li><strong>Nombre y apellidos / Nombre del negocio</strong></li>
                 <li><strong>Correo electrónico</strong></li>
-                <li><strong>Teléfono</strong> (si lo proporciona voluntariamente)</li>
-                <li><strong>Mensajes</strong> y contenido de consultas</li>
+                <li><strong>Teléfono de contacto</strong> (si lo proporciona voluntariamente)</li>
+                <li><strong>Mensajes</strong> y contenido de consultas o pedidos</li>
             </ul>
             <p>
                 Estos datos se recopilan exclusivamente cuando el usuario los envía de forma voluntaria a través 
-                de formularios de contacto, correo electrónico o WhatsApp.
+                de correo electrónico, WhatsApp o formularios directos.
             </p>
         </div>
-        
+
         <div class="legal-section">
             <h2>3. Finalidad del Tratamiento de Datos</h2>
             <p>
                 DERON SUPPLY utiliza los datos personales recabados para las siguientes finalidades:
             </p>
             <ul>
-                <li>Gestionar y responder a consultas y solicitudes del usuario</li>
-                <li>Procesar pedidos y presupuestos</li>
-                <li>Mantener comunicación sobre productos y servicios</li>
-                <li>Cumplimiento de obligaciones legales y fiscales</li>
+                <li>Gestionar y responder a consultas, presupuestos y solicitudes de stands personalizados</li>
+                <li>Procesar y tramitar los pedidos y envíos correspondientes</li>
+                <li>Mantener la comunicación relativa a las características técnicas y configuración de los stands</li>
+                <li>Cumplimiento de las obligaciones legales, contables y fiscales aplicables</li>
             </ul>
         </div>
-        
+
         <div class="legal-section">
             <h2>4. Base Legal para el Tratamiento</h2>
             <p>
                 El tratamiento de sus datos personales se basa en:
             </p>
             <ul>
-                <li><strong>Consentimiento del usuario:</strong> Al enviar un formulario o comunicarse con nosotros</li>
-                <li><strong>Cumplimiento de obligaciones legales</strong> en materia fiscal y comercial</li>
-                <li><strong>Interés legítimo</strong> en mantener relaciones comerciales con nuestros clientes</li>
+                <li><strong>Consentimiento del usuario:</strong> Al enviar una consulta o comunicarse voluntariamente</li>
+                <li><strong>Ejecución de un contrato o medidas precontractuales:</strong> En la gestión y envío de pedidos</li>
+                <li><strong>Cumplimiento de obligaciones legales:</strong> En materia fiscal, mercantil y de facturación</li>
+                <li><strong>Interés legítimo:</strong> En la atención continua a clientes y mejora de la calidad de servicio</li>
             </ul>
         </div>
-        
+
         <div class="legal-section">
             <h2>5. Conservación de Datos</h2>
             <p>
-                Los datos personales se conservarán durante el tiempo necesario para cumplir con las finalidades 
-                indicadas y de conformidad con la normativa fiscal aplicable (generalmente, durante 6 años desde 
-                la última interacción comercial).
+                Los datos personales se conservarán durante el tiempo estrictamente necesario para cumplir con las finalidades 
+                para las que fueron recabados y mientras existan obligaciones legales o contractuales que lo requieran 
+                (generalmente, durante los plazos de prescripción fiscal y contable).
             </p>
         </div>
-        
+
         <div class="legal-section">
             <h2>6. Derechos del Usuario</h2>
             <p>
-                De conformidad con la legislación de protección de datos, el usuario tiene los siguientes derechos:
+                De conformidad con la normativa europea y nacional de protección de datos, usted puede ejercer en todo momento 
+                sus derechos de:
             </p>
             <ul>
-                <li><strong>Derecho de acceso:</strong> Obtener información sobre qué datos personales tenemos sobre usted</li>
-                <li><strong>Derecho de rectificación:</strong> Corregir datos inexactos o incompletos</li>
-                <li><strong>Derecho de supresión:</strong> Solicitar la eliminación de sus datos (derecho al olvido)</li>
-                <li><strong>Derecho de limitación:</strong> Restringir el procesamiento de sus datos</li>
-                <li><strong>Derecho de portabilidad:</strong> Recibir sus datos en formato estructurado</li>
-                <li><strong>Derecho de oposición:</strong> Oponerse al procesamiento de sus datos para ciertos fines</li>
+                <li><strong>Acceso:</strong> Saber qué datos personales conservamos sobre usted</li>
+                <li><strong>Rectificación:</strong> Corregir cualquier información inexacta o incompleta</li>
+                <li><strong>Supresión:</strong> Solicitar la eliminación de sus datos cuando ya no sean necesarios</li>
+                <li><strong>Limitación del tratamiento:</strong> Restringir el procesamiento bajo determinadas circunstancias</li>
+                <li><strong>Portabilidad:</strong> Obtener sus datos en formato estructurado de uso común</li>
+                <li><strong>Oposición:</strong> Oponerse al tratamiento de sus datos por motivos legítimos</li>
             </ul>
             <p>
-                Para ejercer cualquiera de estos derechos, puede contactar con DERON SUPPLY en: <strong>deronsupply@gmail.com</strong>
+                Para ejercer cualquiera de estos derechos, puede escribir directamente a: <strong>deronsupply@gmail.com</strong>
             </p>
         </div>
-        
+
         <div class="legal-section">
-            <h2>7. No Compartimos Datos con Terceros</h2>
+            <h2>7. Destinatarios y Transferencias de Datos</h2>
             <p>
-                DERON SUPPLY no comparte, vende, ni cede los datos personales a terceros, excepto cuando sea 
-                obligatorio por ley o cuando sea necesario para prestar los servicios contratados.
+                DERON SUPPLY no comercializa, vende ni comparte datos con terceros salvo cuando resulte imprescindible 
+                para la correcta prestación del servicio (por ejemplo, agencias de transporte encargadas del envío físico de los stands) 
+                o por obligación legal aplicable.
             </p>
         </div>
-        
+
         <div class="legal-section">
-            <h2>8. Seguridad de los Datos</h2>
+            <h2>8. Medidas de Seguridad</h2>
             <p>
-                DERON SUPPLY implementa medidas técnicas y organizativas apropiadas para proteger los datos 
-                personales contra el acceso, alteración, pérdida o divulgación no autorizados.
-            </p>
-        </div>
-        
-        <div class="legal-section">
-            <h2>9. Cambios en esta Política</h2>
-            <p>
-                Esta política de privacidad puede actualizarse en cualquier momento. Se notificará a los usuarios 
-                de cualquier cambio significativo en el tratamiento de sus datos.
+                Aplicamos medidas técnicas y organizativas adecuadas para proteger los datos personales frente a pérdidas, 
+                accesos no autorizados, alteraciones o divulgaciones indebidas.
             </p>
         </div>
     </main>
-    
+
     <footer>
         <div class="footer-content">
             <div class="footer-top">
-                <div class="footer-logo">
+                <div class="footer-brand">
+                    <div class="footer-symbol">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="20" height="20">
+                            <path d="M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z" fill="#111111" fill-rule="evenodd" />
+                        </svg>
+                    </div>
                     <span class="footer-logo-text">DERON</span>
                     <span class="footer-subtitle">Stands NFC para negocios</span>
                 </div>
+
+                <div class="footer-socials">
+                    <a href="https://instagram.com/deronsupply" target="_blank" rel="noopener noreferrer">Instagram <span>@deronsupply</span></a>
+                    <a href="https://tiktok.com/@deronsupply" target="_blank" rel="noopener noreferrer">TikTok <span>@deronsupply</span></a>
+                    <a href="mailto:deronsupply@gmail.com">deronsupply@gmail.com</a>
+                </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <div class="footer-copy">&copy; 2024 DERON SUPPLY. Todos los derechos reservados.</div>
                 <div class="footer-links">
-                    <a href="/legal/aviso-legal">Aviso Legal</a>
-                    <a href="/legal/privacidad">Privacidad</a>
-                    <a href="/legal/cookies">Cookies</a>
+                    <a href="/legal/aviso-legal.html">Aviso Legal</a>
+                    <a href="/legal/privacidad.html">Privacidad</a>
+                    <a href="/legal/cookies.html">Cookies</a>
                 </div>
             </div>
         </div>

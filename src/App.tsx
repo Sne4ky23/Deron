@@ -3,13 +3,11 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Concept } from './components/Concept';
 import { Benefits } from './components/Benefits';
-import { ForWho } from './components/ForWho';
 import { Product } from './components/Product';
 import { Process } from './components/Process';
-import { FAQ } from './components/FAQ';
 import { Applications } from './components/Applications';
+import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
-import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { SectionNav } from './components/SectionNav';
 import { useIntroScroll } from './hooks/useIntroScroll';
@@ -36,29 +34,23 @@ export default function App() {
         {/* SECCIÓN 4 — BENEFICIOS */}
         <Benefits />
 
-        {/* SECCIÓN 5 — PARA QUIÉN ES */}
-        <ForWho />
-
-        {/* SECCIÓN 6 — PRODUCTO (Interactivo con Stand NFC, Valoraciones y Contacto) */}
+        {/* SECCIÓN 5 — PRODUCTO (Interactivo con Stand NFC, Valoraciones y Contacto) */}
         <Product />
 
-        {/* SECCIÓN 7 — PROCESO */}
+        {/* SECCIÓN 6 — PROCESO */}
         <Process />
 
-        {/* SECCIÓN 8 — FAQ */}
-        <FAQ />
-
-        {/* SECCIÓN 9 — APLICACIONES */}
+        {/* SECCIÓN 7 — APLICACIONES */}
         <Applications />
 
-        {/* SECCIÓN 10 — CONTACTO */}
-        <Contact />
+        {/* SECCIÓN 8 — FAQ (Anteúltimo antes de Contacto) */}
+        <FAQ />
 
-        {/* SECCIÓN 11 — CTA FINAL */}
-        <FinalCTA />
+        {/* SECCIÓN 9 — CONTACTO */}
+        <Contact />
       </main>
 
-      {/* SECCIÓN 12 — FOOTER */}
+      {/* SECCIÓN 10 — FOOTER */}
       <Footer />
     </div>
   );

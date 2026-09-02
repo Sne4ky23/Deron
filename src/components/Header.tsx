@@ -56,6 +56,7 @@ export const Header: React.FC = () => {
     { label: 'El Stand', href: '#producto' },
     { label: 'Proceso', href: '#proceso' },
     { label: 'En uso', href: '#aplicaciones' },
+    { label: 'FAQ', href: '#faq' },
     { label: 'Contacto', href: '#contacto' },
   ];
 
