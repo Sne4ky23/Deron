@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviso Legal - DERON Supply</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #FFFFFF;
+            color: #111111;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid #111111/10;
+            padding: 1.5rem 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+        }
+        
+        .header-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: #111111;
+            min-height: 2.75rem;
+        }
+        
+        .logo-text {
+            font-family: 'Monument Extended', 'Syne', sans-serif;
+            font-size: 1.125rem;
+            font-weight: bold;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        
+        .back-btn {
+            font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 0.75rem 1.25rem;
+            border: 1px solid #111111;
+            background-color: transparent;
+            color: #111111;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            min-height: 2.75rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .back-btn:hover {
+            background-color: #111111;
+            color: #FFFFFF;
+        }
+        
+        main {
+            max-width: 80rem;
+            margin: 0 auto;
+            padding: 8rem 1rem 5rem;
+            flex: 1;
+        }
+        
+        h1 {
+            font-family: 'Monument Extended', 'Syne', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.75rem);
+            font-weight: bold;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #111111/10;
+        }
+        
+        h2 {
+            font-family: 'Monument Extended', 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin: 2rem 0 1rem 0;
+            margin-top: 2.5rem;
+        }
+        
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            color: #111111/80;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #111111/80;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            line-height: 1.8;
+        }
+        
+        a {
+            color: #111111;
+            text-decoration: underline;
+        }
+        
+        a:hover {
+            color: #111111/60;
+        }
+        
+        footer {
+            background-color: #111111;
+            color: #FFFFFF;
+            border-top: 1px solid #FFFFFF/10;
+            padding: 4rem 1rem;
+            margin-top: 5rem;
+        }
+        
+        .footer-content {
+            max-width: 80rem;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-top {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+        }
+        
+        .footer-logo-text {
+            font-family: 'Monument Extended', 'Syne', sans-serif;
+            font-size: 1.125rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        
+        .footer-subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #FFFFFF/50;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #FFFFFF/10;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-copy {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #FFFFFF/40;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        .footer-links a {
+            color: #FFFFFF/50;
+            text-decoration: none;
+            transition: color 0.3s;
+            min-height: 2.75rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+        
+        .legal-section {
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">
+                <span class="logo-text">DERON</span>
+            </a>
+            <a href="/" class="back-btn">← Volver atrás</a>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Aviso Legal</h1>
+        
+        <div class="legal-section">
+            <h2>1. Identidad del Responsable</h2>
+            <p>
+                En cumplimiento con el deber de información dispuesto en la Ley 34/1988, de 11 de noviembre, 
+                sobre publicidad y responsabilidad en la comunicación comercial, y en la Ley 3/1991, de 10 de enero, 
+                de Competencia Desleal:
+            </p>
+            <ul>
+                <li><strong>Denominación Social:</strong> DERON SUPPLY</li>
+                <li><strong>Correo Electrónico:</strong> deronsupply@gmail.com</li>
+                <li><strong>Actividad Principal:</strong> Diseño y comercialización de stands NFC para mostradores</li>
+            </ul>
+        </div>
+        
+        <div class="legal-section">
+            <h2>2. Condiciones de Uso del Sitio Web</h2>
+            <p>
+                El acceso y utilización de este sitio web está sujeto a los términos y condiciones que se detallan 
+                a continuación. El usuario se compromete a usar este sitio de forma legal y lícita, y a no incurrir 
+                en conductas que sean contrarias a la ley, la moral, el orden público o las buenas costumbres.
+            </p>
+            <p>
+                El usuario es el único responsable de cualquier daño o perjuicio, directo o indirecto, que pueda 
+                derivarse del mal uso de este sitio web.
+            </p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>3. Propiedad Intelectual</h2>
+            <p>
+                Todos los contenidos de este sitio web, incluyendo pero no limitado a textos, imágenes, logotipos, 
+                gráficos, videos, iconos y software, son propiedad intelectual de DERON SUPPLY o están debidamente 
+                licenciados para su uso.
+            </p>
+            <p>
+                Queda expresamente prohibida la reproducción, distribución, transmisión, modificación o cualquier 
+                otro uso de los contenidos sin el consentimiento previo y expreso de DERON SUPPLY.
+            </p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>4. Responsabilidad sobre el Contenido</h2>
+            <p>
+                Aunque se hace todo lo posible para mantener la información actualizada y precisa, DERON SUPPLY 
+                no garantiza la exactitud, integridad o disponibilidad del contenido del sitio web.
+            </p>
+            <p>
+                DERON SUPPLY no será responsable de:
+            </p>
+            <ul>
+                <li>Errores u omisiones en el contenido</li>
+                <li>Interrupciones o fallos del servicio</li>
+                <li>Daños o pérdidas derivadas del uso o la imposibilidad de usar este sitio</li>
+            </ul>
+        </div>
+        
+        <div class="legal-section">
+            <h2>5. Enlaces Externos</h2>
+            <p>
+                Este sitio web puede contener enlaces a otros sitios web. DERON SUPPLY no es responsable de 
+                los contenidos, servicios o políticas de terceros. El acceso a estos enlaces se realiza bajo 
+                la responsabilidad exclusiva del usuario.
+            </p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>6. Legislación Aplicable</h2>
+            <p>
+                Este aviso legal se rige por la legislación española. Cualquier controversia se someterá a los 
+                juzgados y tribunales competentes según la ley española.
+            </p>
+        </div>
+        
+        <div class="legal-section">
+            <h2>7. Modificación del Aviso Legal</h2>
+            <p>
+                DERON SUPPLY se reserva el derecho a modificar este aviso legal en cualquier momento sin previo 
+                aviso. Se recomienda a los usuarios revisar regularmente este documento para estar al tanto de 
+                cualquier cambio.
+            </p>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <span class="footer-logo-text">DERON</span>
+                    <span class="footer-subtitle">Stands NFC para negocios</span>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copy">&copy; 2024 DERON SUPPLY. Todos los derechos reservados.</div>
+                <div class="footer-links">
+                    <a href="/legal/aviso-legal">Aviso Legal</a>
+                    <a href="/legal/privacidad">Privacidad</a>
+                    <a href="/legal/cookies">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
