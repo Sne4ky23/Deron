@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Página no encontrada | DERON</title>
+    <meta name="description" content="Página no encontrada. DERON — Stands NFC para Negocios." />
+    <meta name="robots" content="noindex, follow" />
+
+    <!-- Favicon DERON -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23111111'/%3E%3Cpath d='M 22 22 C 22 19.5 23.5 18 25 18 C 26.5 18 28 19.5 28 22 L 28 78 C 28 80.5 26.5 82 25 82 C 23.5 82 22 80.5 22 78 Z M 36 18 C 60 18 76 31 76 50 C 76 69 60 82 36 82 L 36 71 C 54 71 65 61 65 50 C 65 39 54 29 36 29 Z M 36 34 C 46 34 54 41 54 50 C 54 59 46 66 36 66 L 36 55 C 41 55 44 52 44 50 C 44 48 41 45 36 45 Z' fill='%23FFFFFF' fill-rule='evenodd' transform='translate(10,10) scale(0.8)'/%3E%3C/svg%3E" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              syne: ['Syne', 'sans-serif'],
+              space: ['"Space Grotesk"', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Space Grotesk', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-[#111111] antialiased selection:bg-[#111111] selection:text-white flex flex-col min-h-screen">
+    
+    <!-- Header -->
+    <header class="border-b border-[#111111]/10 py-4 px-4 sm:px-6 md:px-12 bg-white sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group min-h-[44px]" aria-label="DERON inicio">
+          <div class="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-4.5 0 100 100" width="32" height="32" role="img" aria-label="Símbolo DERON">
+              <path d="M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z" fill="#111111" fill-rule="evenodd" />
+            </svg>
+          </div>
+          <span class="font-syne text-lg tracking-[0.18em] font-extrabold text-[#111111] select-none uppercase">
+            DERON
+          </span>
+        </a>
+        <a href="/" class="px-5 py-2 text-xs uppercase tracking-[0.2em] font-medium border border-[#111111] bg-transparent text-[#111111] hover:bg-[#111111] hover:text-white transition-all">
+          Volver
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col items-center justify-center text-center px-4 sm:px-6 py-20">
+      <div class="max-w-md mx-auto flex flex-col items-center">
+        <!-- DERON Symbol -->
+        <div class="w-20 h-20 sm:w-24 sm:h-24 mb-6 flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="-4.5 0 100 100" width="100%" height="100%">
+            <path d="M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z" fill="#111111" fill-rule="evenodd" />
+          </svg>
+        </div>
+
+        <!-- 404 Headline -->
+        <span class="font-mono text-xs text-[#111111]/50 tracking-[0.25em] uppercase block mb-2 font-bold">Error 404</span>
+        <h1 class="font-syne text-4xl sm:text-5xl font-extrabold uppercase tracking-tight text-[#111111] mb-4">
+          Página no encontrada
+        </h1>
+
+        <p class="text-sm sm:text-base text-[#111111]/70 leading-relaxed mb-8">
+          El enlace que has seguido no existe, ha cambiado de dirección o ha sido retirado.
+        </p>
+
+        <!-- CTA Button -->
+        <a
+          href="/"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#111111] text-white font-syne text-xs uppercase tracking-[0.2em] font-bold hover:bg-black transition-all shadow-md"
+        >
+          <span>Volver al inicio</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer DERON -->
+    <footer id="main-footer" class="bg-[#111111] text-white border-t border-white/10 py-16 px-4 sm:px-6 md:px-12">
+      <div class="max-w-7xl mx-auto flex flex-col gap-8">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+          
+          <!-- Logo + Separador + Subtítulo Centrados -->
+          <div class="flex flex-col sm:flex-row items-center gap-3.5 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 bg-white flex items-center justify-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-4.5 0 100 100" width="20" height="20" role="img" aria-label="Símbolo DERON">
+                  <path d="M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z" fill="#111111" fill-rule="evenodd" />
+                </svg>
+              </div>
+              <span class="font-syne text-lg tracking-[0.18em] font-extrabold text-white uppercase select-none leading-none">
+                DERON
+              </span>
+            </div>
+            <span class="hidden sm:inline-block w-px h-4 bg-white/20 shrink-0 self-center" aria-hidden="true"></span>
+            <span class="text-xs uppercase tracking-[0.2em] text-white/50 font-space leading-none">
+              Stands NFC para negocios
+            </span>
+          </div>
+
+          <!-- Redes sociales y contacto -->
+          <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-xs uppercase tracking-[0.2em] text-white/60">
+            <a href="https://instagram.com/deronsupply" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Instagram @deronsupply</a>
+            <a href="https://tiktok.com/@deronsupply" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">TikTok @deronsupply</a>
+            <a href="mailto:deronsupply@gmail.com" class="hover:text-white transition-colors">deronsupply@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- Enlaces legales y copyright -->
+        <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-xs uppercase tracking-[0.15em] text-white/40 font-mono text-center md:text-left">
+            &copy; 2026 DERON SUPPLY. Todos los derechos reservados.
+          </div>
+          <div class="flex gap-4 sm:gap-6 text-xs uppercase tracking-[0.15em] text-white/50">
+            <a href="/legal/aviso-legal.html" class="hover:text-white transition-colors">Aviso Legal</a>
+            <a href="/legal/privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
+            <a href="/legal/cookies.html" class="hover:text-white transition-colors">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

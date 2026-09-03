@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&amp;family=Syne:wght@800&amp;display=swap');
+      .title {
+        font-family: 'Syne', sans-serif;
+        font-size: 52px;
+        font-weight: 800;
+        fill: #FFFFFF;
+        letter-spacing: 0.22em;
+        text-anchor: middle;
+      }
+      .tagline {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        fill: rgba(255, 255, 255, 0.6);
+        letter-spacing: 0.25em;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#111111"/>
+
+  <!-- Centered DERON Symbol -->
+  <g transform="translate(520, 130) scale(1.6)">
+    <path d="M 17 20 C 17 17 19.5 15 22 15 C 24.5 15 27 17 27 20 L 27 80 C 27 83 24.5 85 22 85 C 19.5 85 17 83 17 80 Z M 34 15 C 60 15 74 30 74 50 C 74 70 60 85 34 85 L 34 73 C 53 73 64 63 64 50 C 64 37 53 27 34 27 Z M 34 33 C 44 33 52 40 52 50 C 52 60 44 67 34 67 L 34 56 C 39 56 42 53 42 50 C 42 47 39 44 34 44 Z" fill="#FFFFFF" fill-rule="evenodd" transform="translate(4.5, 0)"/>
+  </g>
+
+  <!-- Brand Text -->
+  <text x="600" y="385" class="title">DERON SUPPLY</text>
+
+  <!-- Tagline -->
+  <text x="600" y="440" class="tagline">STANDS NFC PARA NEGOCIOS</text>
+
+  <!-- Bottom Accent Line -->
+  <line x1="500" y1="480" x2="700" y2="480" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+</svg>
