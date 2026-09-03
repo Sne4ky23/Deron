@@ -399,7 +399,7 @@ export const Product: React.FC = () => {
           </p>
 
           <p className="text-sm text-[#111111]/60 leading-relaxed font-space">
-            Fabricado con materiales resistentes y acabado mate para integrarse con elegancia en cualquier espacio: restaurantes, cafeterías, estudios y locales comerciales.
+            Diseñado con un acabado sobrio y elegante para integrarse de forma natural en cualquier espacio: restaurantes, cafeterías, estudios y locales comerciales.
           </p>
 
           {/* 9. QR Mención sutil debajo del texto existente */}

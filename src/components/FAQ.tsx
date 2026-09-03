@@ -13,32 +13,32 @@ export const FAQ: React.FC = () => {
     {
       question: '¿El cliente necesita instalar alguna app o tener cuenta configurada?',
       answer:
-        'No, en absoluto. El proceso es 100% nativo e inmediato. El cliente solo tiene que acercar su móvil al stand y se le abrirá la pantalla directa de valoración de Google Maps en 1 segundo, sin descargar nada. Además, el stand incluye un código QR grabado en alta resolución para que cualquier cliente con cámara pueda dejar su reseña sin inconvenientes.',
+        'No, en absoluto. Funciona de manera 100% nativa. El cliente solo tiene que acercar su móvil al stand y se le abre directamente la pantalla de valoración en Google Maps en 1 segundo. Además, cuenta con código QR integrado para cualquier smartphone con cámara.',
     },
     {
       question: '¿Requiere batería, cables o toma de corriente?',
       answer:
-        'Ninguna. La tecnología NFC integrada es completamente pasiva y autónoma: aprovecha el propio campo electromagnético del teléfono al acercarse. No necesita pilas, enchufes, recargas ni mantenimiento técnico de ningún tipo.',
+        'No. La tecnología NFC es completamente pasiva y autónoma: aprovecha el propio campo del teléfono al aproximarlo. No necesita pilas, enchufes ni mantenimiento.',
     },
     {
-      question: '¿Viene ya configurado con mi negocio o tengo que programarlo yo?',
+      question: '¿Cómo se vincula a mi negocio?',
       answer:
-        'Te lo entregamos 100% configurado y vinculado a la ficha de Google Maps de tu negocio. Cuando lo recibas, solo tienes que sacarlo de la caja, colocarlo en tu mostrador o mesas y empezar a recibir valoraciones desde el primer minuto.',
+        'Configuramos el chip NFC directamente con el enlace a tu ficha de reseñas de Google Maps para que quede listo para usar en tu mostrador.',
     },
     {
-      question: '¿Se puede cambiar o reprogramar el enlace en el futuro?',
+      question: '¿Puedo cambiar el enlace si en el futuro cambio de ubicación o perfil?',
       answer:
-        'Sí. Tanto el chip NFC como el stand son reescribibles. Si en el futuro cambias de ubicación, renuevas el perfil de tu empresa o deseas dirigir las valoraciones a otro enlace, podemos reprogramarlo fácilmente sin que pierdas tu stand.',
+        'Sí. El chip NFC se puede reprogramar si en el futuro cambias de enlace, dirección o perfil en Google Maps.',
     },
     {
-      question: '¿De qué material está fabricado y qué resistencia tiene?',
+      question: '¿Funciona tanto con iPhone como con Android?',
       answer:
-        'Está fabricado con material técnico de alta densidad en acabado negro mate, con base sólida y equilibrada. Diseñado para soportar el ritmo continuo de locales de hostelería, clínicas y comercios: resistente a salpicaduras, roces y limpieza diaria habitual.',
+        'Sí. Es compatible con ambos sistemas. Los teléfonos leen NFC automáticamente y, si algún dispositivo no lo tiene activado, puede escanear el QR integrado.',
     },
     {
-      question: '¿Cuánto tiempo tarda en llegar mi pedido?',
+      question: '¿Cómo consigo el stand para mi negocio?',
       answer:
-        'El plazo estándar de preparación, personalización y envío es de 3 a 5 días laborables en península.',
+        'Puedes contactarnos directamente por WhatsApp o por correo electrónico para coordinar los detalles de tu stand.',
     },
   ];
 
@@ -59,9 +59,6 @@ export const FAQ: React.FC = () => {
           >
             Preguntas frecuentes
           </motion.h2>
-          <p className="text-base sm:text-lg text-[#111111]/60 font-space mt-3">
-            Todo lo que necesitas saber antes de incorporar DERON a tu mostrador.
-          </p>
         </div>
 
         {/* Accordion */}
