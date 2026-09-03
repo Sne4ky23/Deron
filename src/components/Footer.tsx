@@ -11,16 +11,17 @@ export const Footer: React.FC = () => {
         {/* Top Section: Logo, socials, and links */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo DERON (símbolo + texto) + Stands NFC para negocios */}
-          <div className="flex flex-col sm:flex-row items-center sm:items-baseline gap-3 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center gap-3.5 text-center sm:text-left">
             <div className="flex items-center gap-3">
-              <div className="w-7 h-7 bg-white flex items-center justify-center p-0.5">
-                <DeronSymbol color="#111111" size={22} />
+              <div className="w-7 h-7 bg-white flex items-center justify-center shrink-0">
+                <DeronSymbol color="#111111" size={20} />
               </div>
-              <span className="font-['Syne'] text-lg tracking-[0.18em] font-extrabold text-white uppercase select-none">
+              <span className="font-['Syne'] text-lg tracking-[0.18em] font-extrabold text-white uppercase select-none leading-none">
                 DERON
               </span>
             </div>
-            <span className="text-xs uppercase tracking-[0.2em] text-white/50 font-space sm:border-l sm:border-white/20 sm:pl-3">
+            <span className="hidden sm:inline-block w-px h-4 bg-white/20 shrink-0 self-center" aria-hidden="true" />
+            <span className="text-xs uppercase tracking-[0.2em] text-white/50 font-space leading-none">
               Stands NFC para negocios
             </span>
           </div>

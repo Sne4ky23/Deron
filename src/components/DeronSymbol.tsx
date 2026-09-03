@@ -14,7 +14,7 @@ export const DeronSymbol: React.FC<DeronSymbolProps> = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 100 100"
+      viewBox="-4.5 0 100 100"
       width={size}
       height={size}
       className={className}
