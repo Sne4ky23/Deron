@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-          className="font-hero text-[clamp(40px,8vw,88px)] font-bold tracking-[clamp(0.08em,1.5vw,0.22em)] text-[#111111] uppercase leading-[0.95] select-none pl-[clamp(0.08em,1.5vw,0.22em)] max-w-full overflow-hidden"
+          className="font-['Syne'] text-[clamp(44px,8vw,88px)] font-extrabold tracking-[0.18em] text-[#111111] uppercase leading-none select-none pl-[0.18em] max-w-full overflow-hidden"
         >
           DERON
         </motion.h1>

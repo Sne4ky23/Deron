@@ -2,15 +2,15 @@ import { useEffect, useRef } from 'react';
 
 /**
  * Controlled Slide Scroll Hook:
- * - Direct, controlled 1-gesture-per-screen transitions across the first 4 slides:
+ * - Direct, controlled 1-gesture-per-screen transitions ONLY scrolling DOWN through
+ *   the first 4 slides:
  *     1. Hero (DERON)
  *     2. Concepto (Un gesto físico)
  *     3. Beneficios (Menos fricción. Más reseñas.)
  *     4. El Stand (Producto)
- * - From El Stand onwards: 100% normal, native, free continuous scrolling.
- * - Robust inertial debounce prevents accidental double-skipping so every screen
- *   is clearly viewed.
- * - Scrolling up from top of El Stand smoothly returns to Beneficios -> Concepto -> Hero.
+ * - Scrolling UP is always 100% free/native — no snap back, no forced jumps.
+ * - From El Stand onwards scrolling down: 100% normal native free scrolling.
+ * - Robust inertial debounce prevents accidental double-skipping on the way DOWN.
  */
 export function useIntroScroll() {
   const isAnimatingRef = useRef(false);
@@ -18,19 +18,15 @@ export function useIntroScroll() {
   const touchStartYRef = useRef<number | null>(null);
 
   useEffect(() => {
-    // Only run on desktop screens (>= 1024px) without coarse pointer
     if (typeof window === 'undefined') return;
     const isTouchOrMobile =
       window.innerWidth < 1024 || window.matchMedia('(pointer: coarse)').matches;
-    if (isTouchOrMobile) {
-      return;
-    }
+    if (isTouchOrMobile) return;
 
     const getElementTop = (id: string, offset = 0) => {
       const el = document.getElementById(id);
       if (!el) return 0;
-      const rect = el.getBoundingClientRect();
-      return Math.max(0, rect.top + window.scrollY - offset);
+      return Math.max(0, el.getBoundingClientRect().top + window.scrollY - offset);
     };
 
     const scrollToPosition = (targetY: number, duration = 400, callback?: () => void) => {
@@ -41,29 +37,24 @@ export function useIntroScroll() {
       const startY = window.scrollY;
       const change = targetY - startY;
 
-      // If change is negligible, unlock immediately
       if (Math.abs(change) < 5) {
         isAnimatingRef.current = false;
         return;
       }
 
       const startTime = performance.now();
-      // Premium cubic ease-out
       const easeOutCubic = (t: number) => 1 - Math.pow(1 - t, 3);
 
       const step = (currentTime: number) => {
         const elapsed = currentTime - startTime;
         const progress = Math.min(elapsed / duration, 1);
-        const ease = easeOutCubic(progress);
-
-        window.scrollTo(0, startY + change * ease);
+        window.scrollTo(0, startY + change * easeOutCubic(progress));
 
         if (progress < 1) {
           requestAnimationFrame(step);
         } else {
           window.scrollTo(0, targetY);
           isAnimatingRef.current = false;
-          // Set cooldown to absorb trackpad inertial wheel events
           cooldownUntilRef.current = performance.now() + 500;
           callback?.();
         }
@@ -73,48 +64,45 @@ export function useIntroScroll() {
     };
 
     const handleWheel = (e: WheelEvent) => {
-      if (typeof window === 'undefined' || window.innerWidth < 900) return;
+      if (window.innerWidth < 900) return;
       if (document.body.style.overflow === 'hidden') return;
       if (e.ctrlKey || e.metaKey || e.altKey) return;
 
       const now = performance.now();
       const isCoolingDown = now < cooldownUntilRef.current;
-
       const currentY = window.scrollY;
+
       const conceptTop = getElementTop('concepto', 0);
       const benefitsTop = getElementTop('beneficios', 0);
       const productTop = getElementTop('producto', 68);
 
-      // --- SECTION 4 AND BEYOND: El Stand and the rest of the web ---
-      if (currentY >= productTop - 30) {
-        // Scrolling up at the top edge of El Stand returns to Beneficios
-        if (e.deltaY < -15 && currentY <= productTop + 15) {
-          e.preventDefault();
-          if (!isAnimatingRef.current && !isCoolingDown) {
-            scrollToPosition(benefitsTop);
-          }
-          return;
-        }
+      const delta = e.deltaY;
+      const threshold = 12;
 
+      // ── SCROLLING UP ── always let it go free, no snap at all
+      if (delta < 0) {
+        // Only block during an active animated transition (not cooldown)
         if (isAnimatingRef.current) {
           e.preventDefault();
-          return;
         }
-
-        // 100% NATIVE, FREE NORMAL SCROLL BELOW STAND
         return;
       }
 
-      // During animation or cooldown in the intro slides, absorb wheel events
+      // ── Below El Stand: 100% native scroll down ──
+      if (currentY >= productTop - 30) {
+        if (isAnimatingRef.current) {
+          e.preventDefault();
+        }
+        return;
+      }
+
+      // ── During animation or cooldown on intro slides: absorb down events ──
       if (isAnimatingRef.current || isCoolingDown) {
         e.preventDefault();
         return;
       }
 
-      const delta = e.deltaY;
-      const threshold = 12; // Deliberate scroll intent required
-
-      // --- SLIDE 1: Hero (Deron) ---
+      // ── SLIDE 1: Hero → Concepto ──
       if (currentY < conceptTop - 60) {
         if (delta > threshold) {
           e.preventDefault();
@@ -123,32 +111,26 @@ export function useIntroScroll() {
         return;
       }
 
-      // --- SLIDE 2: Concepto (Un gesto físico) ---
+      // ── SLIDE 2: Concepto → Beneficios ──
       if (currentY >= conceptTop - 60 && currentY < benefitsTop - 60) {
         if (delta > threshold) {
           e.preventDefault();
           scrollToPosition(benefitsTop);
-        } else if (delta < -threshold) {
-          e.preventDefault();
-          scrollToPosition(0);
         }
         return;
       }
 
-      // --- SLIDE 3: Beneficios (Menos fricción. Más reseñas.) ---
+      // ── SLIDE 3: Beneficios → El Stand ──
       if (currentY >= benefitsTop - 60 && currentY < productTop - 30) {
         if (delta > threshold) {
           e.preventDefault();
           scrollToPosition(productTop);
-        } else if (delta < -threshold) {
-          e.preventDefault();
-          scrollToPosition(conceptTop);
         }
       }
     };
 
     const handleTouchStart = (e: TouchEvent) => {
-      if (typeof window !== 'undefined' && window.innerWidth < 900) return;
+      if (window.innerWidth < 900) return;
       if (document.body.style.overflow === 'hidden') return;
       if (e.touches.length > 0) {
         touchStartYRef.current = e.touches[0].clientY;
@@ -156,7 +138,7 @@ export function useIntroScroll() {
     };
 
     const handleTouchMove = (e: TouchEvent) => {
-      if (typeof window !== 'undefined' && window.innerWidth < 900) return;
+      if (window.innerWidth < 900) return;
       if (document.body.style.overflow === 'hidden') return;
       if (touchStartYRef.current === null) return;
 
@@ -168,17 +150,14 @@ export function useIntroScroll() {
       const benefitsTop = getElementTop('beneficios', 0);
       const productTop = getElementTop('producto', 68);
 
-      // Below Stand
-      if (currentY >= productTop - 30) {
-        if (deltaY < -20 && currentY <= productTop + 15) {
-          if (!isAnimatingRef.current && performance.now() >= cooldownUntilRef.current) {
-            e.preventDefault();
-            scrollToPosition(benefitsTop);
-          }
-          return;
-        }
+      // Scrolling UP touch: always free
+      if (deltaY < 0) {
+        if (isAnimatingRef.current) e.preventDefault();
         return;
       }
+
+      // Below Stand: free
+      if (currentY >= productTop - 30) return;
 
       if (isAnimatingRef.current || performance.now() < cooldownUntilRef.current) {
         e.preventDefault();
@@ -187,7 +166,6 @@ export function useIntroScroll() {
 
       const swipeThreshold = 30;
 
-      // In Hero
       if (currentY < conceptTop - 60) {
         if (deltaY > swipeThreshold) {
           e.preventDefault();
@@ -196,26 +174,18 @@ export function useIntroScroll() {
         return;
       }
 
-      // In Concepto
       if (currentY >= conceptTop - 60 && currentY < benefitsTop - 60) {
         if (deltaY > swipeThreshold) {
           e.preventDefault();
           scrollToPosition(benefitsTop);
-        } else if (deltaY < -swipeThreshold) {
-          e.preventDefault();
-          scrollToPosition(0);
         }
         return;
       }
 
-      // In Beneficios
       if (currentY >= benefitsTop - 60 && currentY < productTop - 30) {
         if (deltaY > swipeThreshold) {
           e.preventDefault();
           scrollToPosition(productTop);
-        } else if (deltaY < -swipeThreshold) {
-          e.preventDefault();
-          scrollToPosition(conceptTop);
         }
       }
     };
@@ -225,7 +195,7 @@ export function useIntroScroll() {
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (typeof window !== 'undefined' && window.innerWidth < 900) return;
+      if (window.innerWidth < 900) return;
       if (document.body.style.overflow === 'hidden') return;
       const activeTag = document.activeElement?.tagName.toLowerCase();
       if (activeTag === 'input' || activeTag === 'textarea') return;
@@ -245,14 +215,8 @@ export function useIntroScroll() {
           } else {
             scrollToPosition(productTop);
           }
-        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-          e.preventDefault();
-          if (currentY >= benefitsTop - 60) {
-            scrollToPosition(conceptTop);
-          } else if (currentY >= conceptTop - 60) {
-            scrollToPosition(0);
-          }
         }
+        // Arrow up: let browser handle natively — no preventDefault
       }
     };
 

@@ -225,7 +225,7 @@ export const Applications: React.FC = () => {
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#111111]/40 uppercase">Web:</span>
-                  <span>deron.supply</span>
+                  <span>deronsupply.es</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-[#111111]/40 uppercase">NFC:</span>

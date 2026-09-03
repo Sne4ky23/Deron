@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
               <div className="w-7 h-7 bg-white flex items-center justify-center p-0.5">
                 <DeronSymbol color="#111111" size={22} />
               </div>
-              <span className="font-monument text-lg tracking-[0.2em] font-bold text-white uppercase select-none">
+              <span className="font-['Syne'] text-lg tracking-[0.18em] font-extrabold text-white uppercase select-none">
                 DERON
               </span>
             </div>
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
         {/* Bottom Section: Legal links and copyright */}
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-xs uppercase tracking-[0.15em] text-white/40 font-mono text-center md:text-left">
-            &copy; 2024 DERON SUPPLY. Todos los derechos reservados.
+            &copy; 2026 DERON SUPPLY. Todos los derechos reservados.
           </div>
 
           {/* Legal Links */}

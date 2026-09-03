@@ -112,7 +112,7 @@ export const Header: React.FC = () => {
             <div className="w-8 h-8 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
               <DeronSymbol color="#111111" size={32} />
             </div>
-            <span className="font-monument text-lg tracking-[0.18em] font-bold text-[#111111] select-none">
+            <span className="font-['Syne'] text-lg tracking-[0.18em] font-extrabold text-[#111111] select-none uppercase">
               DERON
             </span>
           </a>
@@ -198,7 +198,7 @@ export const Header: React.FC = () => {
               <div className="w-8 h-8 flex items-center justify-center">
                 <DeronSymbol color="#111111" size={28} />
               </div>
-              <span className="font-monument text-lg tracking-[0.18em] font-bold text-[#111111]">
+              <span className="font-['Syne'] text-lg tracking-[0.18em] font-extrabold text-[#111111] uppercase">
                 DERON
               </span>
             </button>
