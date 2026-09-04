@@ -10,11 +10,8 @@ import { FAQ } from './components/FAQ';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { SectionNav } from './components/SectionNav';
-import { useIntroScroll } from './hooks/useIntroScroll';
 
 export default function App() {
-  useIntroScroll();
-
   return (
     <div className="min-h-screen bg-white text-[#111111] flex flex-col font-space selection:bg-[#111111] selection:text-white relative">
       {/* SECCIÓN 1 — HEADER */}
